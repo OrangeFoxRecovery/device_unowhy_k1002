@@ -33,7 +33,6 @@ fi
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export FOX_R11=1
 	export OF_PATCH_AVB20=1
-        export OF_SCREEN_H=1728
 	export OF_USE_MAGISKBOOT=1
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
 	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
@@ -65,8 +64,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 	export FOX_RECOVERY_BOOT_PARTITION="/dev/block/platform/bootdevice/by-name/boot"
 
+	# LZMA Compression
+	export FOX_USE_LZMA_COMPRESSION=1
+
 	# Build Vanilla
         export OF_VANILLA_BUILD=1
+
+	# Screen Resolution - 1280x800
+	export OF_SCREEN_H=1728
 
 	# quick backup defaults
         export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"

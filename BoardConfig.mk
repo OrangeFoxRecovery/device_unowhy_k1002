@@ -1,4 +1,23 @@
+#
+# Copyright (C) 2022 The OrangeFox Recovery Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 DEVICE_PATH := device/unowhy/k1002
+
+# For building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -17,14 +36,8 @@ TARGET_2ND_CPU_VARIANT := generic
 BOARD_AVB_ENABLE := false
 
 # Bootloader
-TARGET_BOARD_PLATFORM := mt8167
 TARGET_BOOTLOADER_BOARD_NAME := mt8167
 TARGET_NO_BOOTLOADER := true
-
-# Display
-DEVICE_RESOLUTION := 800x1280
-DEVICE_SCREEN_WIDTH := 800
-DEVICE_SCREEN_HEIGHT := 1280
 
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
@@ -50,6 +63,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8328487
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 TARGET_USERIMAGES_USE_EXT4 := true
+
+# Platform
+TARGET_BOARD_PLATFORM := mt8167
 
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := vendor

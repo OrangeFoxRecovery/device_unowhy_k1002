@@ -59,6 +59,12 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_XZ_UTILS=1
 	export OF_USE_GREEN_LED=0
 
+	# MediaTek
+	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/bootdevice/by-name/recovery"
+	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
+	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
+	export FOX_RECOVERY_BOOT_PARTITION="/dev/block/platform/bootdevice/by-name/boot"
+
 	# Build Vanilla
         export OF_VANILLA_BUILD=1
 

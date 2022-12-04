@@ -67,6 +67,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# LZMA Compression
 	export FOX_USE_LZMA_COMPRESSION=1
 
+	# Size Reduction
+	export FOX_DRASTIC_SIZE_REDUCTION=1
+
 	# Build Vanilla
         export OF_VANILLA_BUILD=1
 
